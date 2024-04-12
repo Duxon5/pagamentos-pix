@@ -1,0 +1,17 @@
+#acessar o caminho root do projeto
+cd C:\Users\Programar\Documents\Projetos\Java\ProcessosSeletivos\ItauPix\pix
+
+#para buildar a imagem
+docker build -t pix .
+
+#para listar as imagens
+docker images
+
+#para rodar a imagem gerada (porta do docker:porta da aplicação)
+docker run -p 8000:4321 pix
+
+#listar o que está no ar
+docker container ls
+
+#derrubar o container (ver o id no docker container ls)
+docker rm -f {id}

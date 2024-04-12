@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "87950a83-d5b9-4bca-b172-0bcb0ecf9518",
+		"name": "integracao-pix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19138787"
+	},
+	"item": [
+		{
+			"name": "buscarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/integracao/pix/buscarTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"integracao",
+						"pix",
+						"buscarTodos"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

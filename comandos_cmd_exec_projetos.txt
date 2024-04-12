@@ -1,0 +1,40 @@
+# =========== CMD 1 - APLICAÇÃO PIX ===========
+# 1. Compilar com o maven
+mvn compile
+
+# 2. Acessar a pasta do projeto
+cd C:\caminho\pix
+
+# 3. Fazer o build no docker
+docker build -t pix .
+
+# 4. Start o projeto no docker
+docker run -p 4321:4321 pix
+
+
+# =========== CMD 2 - APLICAÇÃO INTEGRACAO-PIX ===========
+# 1. Verificar qual é o IPAddress que está rodando na Aplicação PIX
+# 1.1. Listar os containers docker
+docker container ls
+
+# 1.2. Identificar o CONTAINER ID do PIX e trocar abaixo no idContainer
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' idContainer
+
+# 1.3. Fazer a troca do localhost pelo IPAddress no Dockerfile do projeto-pix
+FROM openjdk:17.0.1-jdk-slim
+ARG JAR_FILE=target/projeto-integracao-pix.jar
+COPY ./target/projeto-integracao-pix.jar app.jar
+EXPOSE 1234
+ENTRYPOINT ["java", "-jar", "/app.jar", "localhost"] <==== TROCAR O localhost pelo IPAddress - COLAR SEM AS ASPAS
+
+# 2. Acessar a pasta do projeto
+cd C:\caminho\integracao-pix
+
+# 3. Compilar com o maven
+mvn compile
+
+# 4. Fazer o build no docker
+docker build -t integracao-pix .
+
+# 5. Start o projeto no docker
+docker run -p 1234:1234 integracao-pix

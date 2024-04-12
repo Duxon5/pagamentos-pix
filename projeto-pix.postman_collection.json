@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "7ca145d8-4132-4b42-805a-c1053f09662e",
+		"name": "projeto-pix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19138787"
+	},
+	"item": [
+		{
+			"name": "deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4321/pix/pagamentos/deletar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"pix",
+						"pagamentos",
+						"deletar",
+						"1"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "incluir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dataPagamento\": \"2024-04-13T02:20:00\",\r\n  \"valor\": 100.50,\r\n  \"descricao\": \"Pagamento de conta de luz\",\r\n  \"recorrencia\": 4,\r\n  \"destinoChavePix\": \"1140028922\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4321/pix/pagamentos/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"pix",
+						"pagamentos",
+						"incluir"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1\",\r\n  \"dataPagamento\": \"2024-04-10T02:20:00\",\r\n  \"valor\": 1500.50,\r\n  \"descricao\": \"Teste\",\r\n  \"recorrencia\": 2,\r\n  \"destinoChavePix\": \"1140028922\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4321/pix/pagamentos/atualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"pix",
+						"pagamentos",
+						"atualizar"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizarValor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1\",\r\n  \"valor\": 10.90\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4321/pix/pagamentos/atualizarValor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"pix",
+						"pagamentos",
+						"atualizarValor"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarPorStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4321/pix/pagamentos/buscarPorStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"pix",
+						"pagamentos",
+						"buscarPorStatus"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
