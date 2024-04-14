@@ -1,9 +1,9 @@
 # =========== CMD 1 - APLICAÇÃO PIX ===========
-# 1. Compilar com o maven
-mvn compile
-
-# 2. Acessar a pasta do projeto
+# 1. Acessar a pasta do projeto
 cd C:\caminho\pix
+
+# 2. Compilar com o maven
+mvn compile
 
 # 3. Fazer o build no docker
 docker build -t pix .
